@@ -27,7 +27,7 @@ impl Miner {
         skip_confirm: bool,
     ) -> ClientResult<Signature> {
 
-        let send_attempts = 70; 
+        let send_attempts = 100; 
         let signer = self.signer();
         let client = RpcClient::new_with_commitment(self.cluster.clone(), CommitmentConfig::confirmed());
 
@@ -62,7 +62,7 @@ impl Miner {
                 },
             }
             // Consider adding a short delay between attempts to avoid overwhelming the RPC server
-            tokio::time::sleep(Duration::from_millis(333)).await;
+            // tokio::time::sleep(Duration::from_millis(333)).await;
         }
 
         // Return the last known signature or an error if no attempts were successful

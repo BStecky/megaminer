@@ -22,7 +22,7 @@ impl Miner {
         let cu_limit_ix = ComputeBudgetInstruction::set_compute_unit_limit(CU_LIMIT_REGISTER);
         let cu_price_ix = ComputeBudgetInstruction::set_compute_unit_price(self.priority_fee);
         let ix = ore::instruction::register(signer.pubkey());
-        self.send_and_confirm(&[cu_limit_ix, cu_price_ix, ix], false)
+        self.send_and_confirm_old(&[cu_limit_ix, cu_price_ix, ix], false)
             .await
             .expect("Transaction failed");
     }

@@ -8,6 +8,7 @@ mod mine;
 mod register;
 mod rewards;
 mod send_and_confirm;
+mod send_and_confirm_old;
 mod treasury;
 #[cfg(feature = "admin")]
 mod update_admin;

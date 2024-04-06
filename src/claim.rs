@@ -45,7 +45,7 @@ impl Miner {
         let ix = ore::instruction::claim(pubkey, beneficiary, amount);
         println!("Submitting claim transaction...");
         match self
-            .send_and_confirm(&[cu_limit_ix, cu_price_ix, ix], false)
+            .send_and_confirm_old(&[cu_limit_ix, cu_price_ix, ix], false)
             .await
         {
             Ok(sig) => {
@@ -86,7 +86,7 @@ impl Miner {
         );
         println!("Creating token account {}...", token_account_pubkey);
         match self
-            .send_and_confirm(&[cu_limit_ix, cu_price_ix, ix], false)
+            .send_and_confirm_old(&[cu_limit_ix, cu_price_ix, ix], false)
             .await
         {
             Ok(_sig) => println!("Created token account {:?}", token_account_pubkey),

@@ -16,7 +16,7 @@ impl Miner {
 
         // Sign and send transaction.
         let ix = ore::instruction::initialize(signer.pubkey());
-        self.send_and_confirm(&[ix], false)
+        self.send_and_confirm_old(&[ix], false)
             .await
             .expect("Transaction failed");
     }

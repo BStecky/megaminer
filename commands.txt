@@ -1,0 +1,13 @@
+https://radial-proportionate-lake.solana-mainnet.quiknode.pro/b0f381196b1b422a171582f771718999120cef06/
+
+https://solitary-responsive-lake.solana-mainnet.quiknode.pro/50ad2ef23ede2d565a6cf5e35aad60c37b2f6c7d/
+
+while true   
+do
+ore \
+    --rpc 'https://solitary-responsive-lake.solana-mainnet.quiknode.pro/50ad2ef23ede2d565a6cf5e35aad60c37b2f6c7d/' \
+    --keypair ~/.config/solana/id.json \
+    --priority-fee 10005 \
+    mine \
+    --threads 8
+done

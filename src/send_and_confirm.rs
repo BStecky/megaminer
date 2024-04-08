@@ -27,7 +27,7 @@ impl Miner {
         skip_confirm: bool,
     ) -> ClientResult<Signature> {
 
-        let send_attempts = 100; 
+        let send_attempts = 20; 
         let signer = self.signer();
         let client = RpcClient::new_with_commitment(self.cluster.clone(), CommitmentConfig::confirmed());
 
